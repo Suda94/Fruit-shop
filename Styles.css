@@ -12,7 +12,7 @@
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  color: #777;
+  color: rgb(154, 11, 11);
   margin: 5px;
 }
 
@@ -21,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 .nav ul {
@@ -50,11 +51,11 @@ body {
 }
 
 .nav a:hover {
-  background-color: rgba(31, 213, 3, 0.3);
+  background-color: rgba(80, 101, 76, 0.796);
 }
 
 .main-header {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(102, 92, 92, 0.6);
   background-image: url("FRUITS/background image.jpg");
   background-blend-mode: multiply;
   background-size: cover;
@@ -67,7 +68,7 @@ body {
   font-size: 1em;
   font-family: "Booter - Zero Zero";
   font-weight: normal;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .band-name-large {
@@ -80,15 +81,17 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: auto;
   margin: 0 auto;
   padding: 0 1.5em;
-  background-color: #b9cdad;
+  background-color: #a3f6d6;
+  display: inline-flexbox;
 }
+
 .section-header {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  color: rgb(4, 67, 0);
+  color: rgb(67, 0, 251);
   text-align: center;
   font-size: 2.5em;
 }
@@ -103,7 +106,7 @@ body {
 
 .main-footer {
   background-color: #56ccf2;
-  color: white;
+  color: rgb(9, 4, 4);
   padding: 0.25em 0;
 }
 
@@ -124,6 +127,7 @@ body {
 .footer-nav img {
   width: 30px;
   height: 30px;
+  image-orientation: left;
 }
 
 .btn {
@@ -159,6 +163,8 @@ body {
   height: 100px;
   padding: 0;
   text-align: center;
+  opacity: 25em;
+  transition: 0.3s;
 }
 
 .btn-primary {
@@ -170,7 +176,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #2d9cdb;
+  background-color: #c3c5c0;
 }
 
 .tour-row {
@@ -208,6 +214,12 @@ body {
 
 .shop-item {
   margin: 30px;
+  display: relative;
+}
+
+.shop-item:hover {
+  background-color: rgb(10, 135, 212);
+  border: 4px;
 }
 
 .shop-item-title {
@@ -221,7 +233,8 @@ body {
 }
 
 .shop-item-image {
-  height: 250px;
+  height: 30px;
+  width: 40px;
 }
 
 .shop-item-details {

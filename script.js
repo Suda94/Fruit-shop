@@ -1,9 +1,3 @@
-if (document.readyState == "loading") {
-  document.addEventListener("DOMContentLoaded", ready);
-} else {
-  ready();
-}
-
 function ready() {
   var removeCartItemButtons = document.getElementsByClassName("btn-danger");
   for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -26,6 +20,11 @@ function ready() {
   document
     .getElementsByClassName("btn-purchase")[0]
     .addEventListener("click", purchaseClicked);
+}
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
 }
 
 //create function to action the purchase button and give alert window with the message.
@@ -73,6 +72,8 @@ function addItemToCart(title, price, imageSrc) {
       return;
     }
   }
+
+  //allow items to be added on the cart
   var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
@@ -93,10 +94,11 @@ function addItemToCart(title, price, imageSrc) {
     .addEventListener("change", quantityChanged);
 }
 
+//cart selector and updateable quantity and price.
 function updateCartTotal() {
-  var cartItemContainer = document.getElementsByClassName("cart-items")[0];
-  var cartRows = cartItemContainer.getElementsByClassName("cart-row");
-  var total = 0;
+  const cartItemContainer = document.getElementsByClassName("cart-items")[0];
+  const cartRows = cartItemContainer.getElementsByClassName("cart-row");
+  let total = 0;
   for (var i = 0; i < cartRows.length; i++) {
     var cartRow = cartRows[i];
     var priceElement = cartRow.getElementsByClassName("cart-price")[0];
@@ -107,7 +109,9 @@ function updateCartTotal() {
     var quantity = quantityElement.value;
     total = total + price * quantity;
   }
+
+  //give total value of the added object on the cart.
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("cart-total-price")[0].innerText =
-    "£" + total;
+    "£" + total.toFixed(2);
 }
